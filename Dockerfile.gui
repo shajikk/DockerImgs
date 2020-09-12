@@ -19,7 +19,7 @@ RUN jupyter labextension install @jupyterlab/server-proxy
 RUN useradd -ms /bin/bash shajikk
 RUN usermod -aG sudo shajikk
 RUN echo "root:root123" | chpasswd
-RUN echo "shajikk:nida123" | chpasswd
+RUN echo "shajikk:shaji123" | chpasswd
 
 
 RUN apt-get install -y git
