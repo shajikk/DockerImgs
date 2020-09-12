@@ -1,0 +1,9 @@
+mkdir -p work
+docker build -f Dockerfile.gui -t ds .
+
+docker run -it --rm  \
+-p 8080:8080 \
+-p 5901:5901 \
+-e JUPYTER_TOKEN="password" \
+-v $PWD/work:/root \
+-h "trial" ds:latest

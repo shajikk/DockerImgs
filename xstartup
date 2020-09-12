@@ -1,0 +1,11 @@
+#!/bin/sh
+unset DBUS_SESSION_BUS_ADDRESS
+unset SESSION_MANAGER
+
+xmodmap -e "pointer = 1 3 2"
+update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal.wrapper
+vncconfig -iconic &
+xfce4-session &
+
+sleep 5
+xfconf-query --channel xfce4-desktop --property  /backdrop/screen0/monitor0/workspace0/last-image --set /desktop.jpg &
